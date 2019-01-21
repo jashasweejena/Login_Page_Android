@@ -19,12 +19,14 @@ public class MainActivity extends AppCompatActivity {
     HTextView signTxtView;
     String[] listOfWords;
     int i = 0;
+    boolean isComplete = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listOfWords = new String[]{"Namaskar,", "Namaste,", "Hola,", "Bonjour,", "Nǐ hǎo,"};
+        listOfWords = new String[]{"ନମସ୍କାର,", "নমস্কার", "नमस्ते,", "வணக்கம்,", "నమస్కారం,", "Hola,", "Bonjour,", "Hello !"};
         getSupportActionBar().hide();
         View decorView = getWindow().getDecorView();
 // Hide the status bar.
@@ -55,13 +57,15 @@ public class MainActivity extends AppCompatActivity {
                 if(i < listOfWords.length - 1) {
                     h.postDelayed(this, 1000);
                     Log.d("Runnable", "run: " + listOfWords[i]);
+                    Log.d("RunnableBool", "run: " + isComplete);
                 }
+                if(i == listOfWords.length - 1)
+                    signTxtView.animateText("Sign in to continue!");
             }
         }, 200);
+
         mLogo = findViewById(R.id.logo_imgview);
         mLogo.setImageResource(R.drawable.logo_dark);
-
-
     }
 
     @Override
