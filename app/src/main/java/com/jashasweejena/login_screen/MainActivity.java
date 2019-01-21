@@ -20,7 +20,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ImageView mLogo;
-    HTextView wcomeTxtView;
     HTextView signTxtView;
     Switch mSwitch;
     String[] listOfWords;
@@ -72,26 +71,14 @@ public class MainActivity extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE | View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         decorView.setSystemUiVisibility(uiOptions);
 
-        wcomeTxtView = (com.hanks.htextview.evaporate.EvaporateTextView) findViewById(R.id.textView2);
         signTxtView = (com.hanks.htextview.evaporate.EvaporateTextView) findViewById(R.id.textView);
-
-       final Handler h = new Handler();
-        h.postDelayed(new Runnable() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                wcomeTxtView.animateText(listOfWords[i++]);
-
-                if(i < listOfWords.length - 1) {
-                    h.postDelayed(this, 1000);
-                    Log.d("Runnable", "run: " + listOfWords[i]);
-                    Log.d("RunnableBool", "run: " + isComplete);
-                }
-                if(i == listOfWords.length - 1)
-                    signTxtView.animateText("Sign in to continue!");
+                signTxtView.animateText("Sign in to continue");
             }
         }, 200);
-
-        mLogo = findViewById(R.id.logo_imgview);
     }
 
     @Override
