@@ -23,11 +23,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'com.google.android.material:material:1.0.0-rc01'
-    def htextview_version = "0.1.6"
-    compile "com.hanks:htextview-evaporate:$htextview_version"   // optional
-    compile "com.hanks:htextview-base:$htextview_version"        // base library
-    compile "com.hanks:htextview-typer:$htextview_version"       // optional
-    compile "com.hanks:htextview-line:$htextview_version"        // optional
+    def htextview_version = "0.1.2"
+    implementation "com.hanks:htextview-base:$htextview_version"
+    implementation "com.hanks:htextview-evaporate:$htextview_version"   // optional
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'

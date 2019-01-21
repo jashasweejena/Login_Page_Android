@@ -23,14 +23,14 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="172dp"
         android:fontFamily="@font/inconsolata"
-        android:text="Welcome Back,"
+        android:text="Hello,"
         android:textColor="@color/blackish"
         android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.hanks.htextview.typer.TyperTextView
+    <com.hanks.htextview.evaporate.EvaporateTextView
         android:id="@+id/textView"
         android:layout_width="322dp"
         android:layout_height="wrap_content"
